@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-size: cover;
+  background-position: center; }
+  body h1 {
+    color: black;
+    background-color: white; }
+  body ul {
+    display: flex;
+    justify-content: space-around; }
+    body ul li {
+      list-style-type: none;
+      background-image: linear-gradient(to right, #ff0707, #b3ff01, #10a310);
+      color: #050404;
+      font-size: 28px; }
+      body ul li a {
+        text-decoration: none;
+        color: black; }
+  @media only screen and (max-width: 768px) {
+    body body {
+      color: white; } }
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    body body {
+      color: #0026ff; } }
+  body footer {
+    color: #050404;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0; }
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,47 @@
+body
+{
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      h1{
+        color: rgb(0, 0, 0);
+        background-color: white;
+      }
+
+  ul{
+      display: flex;
+      justify-content: space-around;
+    
+    
+      li{
+      list-style-type: none;
+      background-image: linear-gradient(to right, rgb(255, 7, 7), rgb(179, 255, 1), rgb(16, 163, 16));
+      color: rgb(5, 4, 4);
+      font-size: 28px;
+      a{
+        text-decoration: none;
+        color: black;
+       }
+     }
+    }
+    @media only screen and ( max-width: 768px){
+      body{
+        color: white;
+      }
+   }    
+   @media only screen and (min-width: 769px) and (max-width: 1024px){
+    body{
+      color: rgb(0, 38, 255);
+    }
+   }
+   footer {
+    color: rgb(5, 4, 4);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+}  
