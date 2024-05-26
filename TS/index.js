@@ -14,4 +14,17 @@ function setRandomBackgroundImage() {
 // Appeler la fonction pour définir l'image de fond aléatoire
 setRandomBackgroundImage();
 // Changer l'image de fond toutes les 5 secondes
-setInterval(setRandomBackgroundImage, 5000);
+setInterval(setRandomBackgroundImage, 3000);
+var text = "Bienvenue_sur_votre_boutique_en_ligne_que_desirer-vous:";
+var index = 0;
+function type() {
+    var typedTextElement = document.getElementById('typed-text');
+    if (typedTextElement) {
+        typedTextElement.innerText += text[index];
+    }
+    index++;
+    if (index < text.length) {
+        setTimeout(type, 200); // Délai entre chaque lettre (en millisecondes)
+    }
+}
+type(); // Appeler la fonction pour commencer la "frappe"
