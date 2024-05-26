@@ -5,31 +5,28 @@ body {
   background-size: cover;
   background-position: center; }
   body h1 {
-    color: black;
+    color: red;
     font-family: Arial, sans-serif;
     font-size: 24px;
     margin: 0;
     padding: 20px;
-    background-image: linear-gradient(to right, #ff0707, #b3ff01, #10a310);
-    display: inline-block;
-    /* Pour que le padding soit pris en compte */ }
+    display: inline-block; /* Pour que le padding soit pris en compte */ }
   body ul {
     display: flex;
     justify-content: space-around; }
     body ul li {
       list-style-type: none;
-      background-image: linear-gradient(to right, #ff0707, #b3ff01, #10a310);
-      color: #050404;
+      color: #030303;
       font-size: 28px; }
       body ul li a {
         text-decoration: none;
-        color: black; }
+        color: #ff0505; }
   @media only screen and (max-width: 768px) {
-    body body {
-      color: white; } }
+    body body h1 {
+      background-color: black; } }
   @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    body body {
-      color: #0026ff; } }
+    body body h1 {
+      background-color: red; } }
   body footer {
     color: #050404;
     position: fixed;

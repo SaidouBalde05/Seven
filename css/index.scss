@@ -6,14 +6,14 @@ body
       background-size: cover;
       background-position: center;
       h1{
-        color: rgb(0, 0, 0);
+        color: rgb(255, 0, 0);
        // background-color: white;
         font-family: Arial, sans-serif;
         font-size: 24px;
         margin: 0;
         padding: 20px;
        // background-color: #f0f0f0;
-       background-image: linear-gradient(to right, rgb(255, 7, 7), rgb(179, 255, 1), rgb(16, 163, 16));
+      // background-image: linear-gradient(to right, rgb(255, 7, 7), rgb(179, 255, 1), rgb(16, 163, 16));
         display: inline-block; /* Pour que le padding soit pris en compte */
       }
 
@@ -24,25 +24,29 @@ body
     
       li{
       list-style-type: none;
-      background-image: linear-gradient(to right, rgb(255, 7, 7), rgb(179, 255, 1), rgb(16, 163, 16));
-      color: rgb(5, 4, 4);
+    //  background-image: linear-gradient(to right, rgb(255, 7, 7), rgb(179, 255, 1), rgb(16, 163, 16));
+      color: rgb(3, 3, 3);
       font-size: 28px;
       a{
         text-decoration: none;
-        color: black;
+        color: rgb(255, 5, 5);
        }
      }
     }
     @media only screen and ( max-width: 768px){
-      body{
-        color: white;
+    body{
+        h1{
+          background-color: black;
+        }
       }
    }    
    @media only screen and (min-width: 769px) and (max-width: 1024px){
     body{
-      color: rgb(0, 38, 255);
+      h1{
+         background-color: red;
+      }
     }
-   }
+   } 
    footer {
     color: rgb(5, 4, 4);
     position: fixed;
