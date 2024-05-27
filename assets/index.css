@@ -10,7 +10,8 @@ body {
     font-size: 24px;
     margin: 0;
     padding: 20px;
-    display: inline-block; /* Pour que le padding soit pris en compte */ }
+    display: inline-block;
+    /* Pour que le padding soit pris en compte */ }
   body ul {
     display: flex;
     justify-content: space-around; }
@@ -34,5 +35,12 @@ body {
     bottom: 0;
     width: 100%;
     padding: 10px 0; }
+
+.hidden {
+  opacity: 0; }
+
+.visible {
+  opacity: 1;
+  transition: opacity 0.5s; }
 
 /*# sourceMappingURL=index.css.map */

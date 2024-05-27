@@ -17,20 +17,4 @@ function setRandomBackgroundImage(): void {
 setRandomBackgroundImage();
 
 // Changer l'image de fond toutes les 5 secondes
-setInterval(setRandomBackgroundImage, 3000);
-
-const text: string = "Bienvenue_sur_votre_boutique_en_ligne_que_desirer-vous:";
-let index: number = 0;
-
-function type(): void {
-  const typedTextElement: HTMLElement | null = document.getElementById('typed-text');
-  if (typedTextElement) {
-    typedTextElement.innerText += text[index];
-  }
-  index++;
-  if (index < text.length) {
-    setTimeout(type, 200); // Délai entre chaque lettre (en millisecondes)
-  }
-}
-
-type(); // Appeler la fonction pour commencer la "frappe"
+setInterval(setRandomBackgroundImage, 5000);

@@ -8,21 +8,22 @@
         <script src="https://kit.fontawesome.com/5915d29e21.js" crossorigin="anonymous"></script>
         <link href="./assets/index.css" rel="stylesheet">
         <script src="./TS/index.js" defer></script>
+        <script src="./TS/animation.js"></script>
     </head>
-    <body>
-        <h1 id="typed-text" class="text-5xl text-center"></h1>
+    <body class="flex flex-col items-center justify-start min-h-screen bg-gray-100 pt-10">
+        <h1 id="animated-heading" class="text-4xl font-bold"></h1>
         <section>
-            <ul>
-                <li> <a href="homme.html">Vetement Pour Homme</a></li>
-                <li> <a href="femme.html">Vetement Pour Femme</a></li>
-                <li> <a href="#">Vetement Pour Enfant</a></li>
+            <ul class="flex space-x-5">
+                <li> <a href="homme.html" class="text-blue-500 p-2 hover:bg-blue-100 rounded" >Vetement Pour Homme</a></li> 
+                    <p id="color-changing-text" class="text-blue-500 p-2 hover:bg-blue-100 rounded text-5xl" >OU</p>
+                <li> <a href="femme.html" class="text-blue-500 p-2 hover:bg-blue-100 rounded">Vetement Pour Femme</a></li>
             </ul>
         </section>
         <footer>
             <nav>
-                <ul>
-               <li> <a href="https://wa.me/611969311"> Nous contacter</a> </li> <br>
-               <li> <a href="#"> Ou est sutue Seven Shopping</a> </li> <br>
+                <ul class="flex space-x-4">
+               <li> <a href="https://wa.me/611969311" class="text-red p-2 hover:bg-blue-100 rounded"> Nous contacter</a> </li> <br>
+               <li> <a href="#" class="text-red p-2 hover:bg-blue-100 rounded"> Ou est sutue Seven Shopping</a> </li> <br>
                 </ul>
             </nav>
         </footer>     
