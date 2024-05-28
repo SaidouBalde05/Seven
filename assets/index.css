@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
   padding: 0;
@@ -42,5 +43,18 @@ body {
 .visible {
   opacity: 1;
   transition: opacity 0.5s; }
+
+/* Style pour placer les images aleatoire de la page d'Accueil sur la même ligne */
+#image-container {
+  display: flex;
+  justify-content: space-between; }
+
+#image-container img {
+  width: 19%;
+  height: auto; }
+
+.Noclick {
+  pointer-events: none;
+  color: black; }
 
 /*# sourceMappingURL=index.css.map */

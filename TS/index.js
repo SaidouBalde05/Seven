@@ -1,4 +1,4 @@
-// Liste des chemins vers les images
+// Liste des chemins vers les images de fond
 var image = [
     'img/img1.png',
     'img/img2.png',
