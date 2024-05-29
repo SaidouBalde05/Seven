@@ -10,8 +10,10 @@
     <script src="./TS/animation.js"></script>
 </head>
 <body class="bg-blue-100 rounded-lg">
-    <h1 class="text-5xl">Votre Panier</h1>
-    <p class="text-2xl">Il est effacer chaque 24 Heure</p>
+    <header>
+        <h1 id="animation-heading" class="text-5xl font-bold"></h1>
+    </header>
+    <p class="text-2xl">Votre panier est vider au bout de 24 Heure</p>
     <section>
         <ul class="flex space-x-5">
             <li> <a href="homme.html" class="text-blue-500 p-2 hover:bg-blue-100 rounded text-4xl" >Retour A Vetement Pour Homme</a></li> 
@@ -19,16 +21,15 @@
             <li> <a href="femme.html" class="text-blue-500 p-2 hover:bg-blue-100 rounded text-4xl" > Retour A Vetement Pour Femme</a></li>
         </ul>
     </section>
-    <div id="panier"></div>
-
-    <footer>
+         <div id="panier"></div>
+    <footer class="flex items-center justify-start min-h-screen pt-10">
         <nav>
             <ul class="flex space-x-4">  
-           <li> <a href="#" class="text-red p-2 hover:bg-blue-100 rounded">Nouvelle Arrivage</a></li>
-           <li> <a href="panier.html" class="text-red p-2 hover:bg-blue-100 rounded">Pannier</a></li>
-           <li> <a href="index.html" id="Accueil" class="text-5xl ">Accueil</a>  </li>
-           <li> <a href="https://wa.me/611969311" class="text-red p-2 hover:bg-blue-100 rounded"> Nous contacter</a> </li>   
-           <li> <a href="#" class="text-red p-2 hover:bg-blue-100 rounded"> localisation</a> </li> 
+           <li> <a href="#" class="text-black text-2xl p-2 hover:bg-blue-300 rounded">Nouvelle Arrivage</a></li>
+           <li> <a href="panier.html" class="text-black text-2xl p-2 hover:bg-blue-300 rounded">Pannier</a></li>
+           <li> <a href="index.html" id="Accueil" class="text-5xl hover:bg-blue-300 rounded">Accueil</a>  </li>
+           <li> <a href="https://wa.me/611969311" class="text-black text-2xl p-2 hover:bg-blue-300 rounded"> Nous contacter</a> </li>   
+           <li> <a href="#" class="text-black text-2xl p-2 hover:bg-blue-300 rounded"> localisation</a> </li> 
             </ul>
         </nav>
     </footer>
