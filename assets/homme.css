@@ -1,3 +1,12 @@
-
+ul {
+  display: flex;
+  justify-content: space-around; }
+  ul li {
+    list-style-type: none;
+    color: #030303;
+    font-size: 28px; }
+    ul li a {
+      text-decoration: none;
+      color: black; }
 
 /*# sourceMappingURL=homme.css.map */
