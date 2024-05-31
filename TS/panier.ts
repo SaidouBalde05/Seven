@@ -4,6 +4,7 @@ interface Commande {
     quantite: number;
     image: string;
     livraison?: Livraison;
+    confirme?: boolean; // Add a flag to check if the command is confirmed
 }
 
 interface Livraison {
@@ -17,8 +18,7 @@ function initialiserLocalStorage(): void {
     if (timestamp) {
         const now = Date.now();
         const diff = now - parseInt(timestamp, 10);
-        const oneDay = 240000;
-       // const oneDay = 24 * 60 * 60 * 1000; // 24 heures en millisecondes
+        const oneDay = 48 * 60 * 60 * 1000; // 24 heures en millisecondes
 
         if (diff > oneDay) {
             localStorage.clear();
@@ -29,18 +29,25 @@ function initialiserLocalStorage(): void {
     }
 }
 
+function enregistrerPagePrecedente(): void {
+    const currentUrl = window.location.href;
+    localStorage.setItem("pagePrecedente", currentUrl);
+}
+
 function ajouterAuPanier(nom: string, prix: number, image: string): void {
     initialiserLocalStorage();
+    enregistrerPagePrecedente();
     
     const commande: Commande = {
         nom,
         prix,
         quantite: 1,
-        image
+        image,
+        confirme: false
     };
 
     let panier: Commande[] = JSON.parse(localStorage.getItem("panier") || "[]");
-    panier.push(commande);
+    panier.unshift(commande); // Add the new command at the beginning
     localStorage.setItem("panier", JSON.stringify(panier));
 
     window.location.href = "panier.html";
@@ -54,9 +61,26 @@ function afficherPanier(): void {
 
     if (panierDiv) {
         if (panier.length === 0) {
-            panierDiv.innerHTML = '<p class="text-xl font-semibold">Votre panier est vide vous n\'avez pas encore passer de commande.<br>Merci</p>';
+            panierDiv.innerHTML = '<p class="text-xl font-semibold">Votre panier est vide</p>';
         } else {
             panierDiv.innerHTML = ''; // Clear existing content
+            const retourBtn = document.createElement("button");
+            retourBtn.innerText = "Retour";
+            retourBtn.className = "bg-gray-300 text-black px-4 py-2 rounded mb-4";
+            retourBtn.onclick = () => {
+                const pagePrecedente = localStorage.getItem("pagePrecedente");
+                if (pagePrecedente) {
+                    // Remove the last unconfirmed order before going back
+                    let panier: Commande[] = JSON.parse(localStorage.getItem("panier") || "[]");
+                    if (!panier[0].confirme) {
+                        panier.shift();
+                    }
+                    localStorage.setItem("panier", JSON.stringify(panier));
+                    window.location.href = pagePrecedente;
+                }
+            };
+            panierDiv.appendChild(retourBtn);
+
             panier.forEach((commande, index) => {
                 const commandeDiv = document.createElement("div");
                 commandeDiv.className = "w-full flex flex-col p-4 bg-white shadow-md rounded-lg mb-4";
@@ -65,7 +89,7 @@ function afficherPanier(): void {
                         <img src="${commande.image}" alt="${commande.nom}" class="w-20 h-20 object-cover rounded mr-4">
                         <div>
                             <p class="text-xl font-semibold">${commande.nom}</p>
-                            <p>${commande.prix}GNF - Quantité: 
+                            <p>${commande.prix}€ - Quantité: 
                                 <button class="bg-gray-300 text-black px-2 rounded" onclick="changerQuantite(${index}, -1)">-</button>
                                 ${commande.quantite}
                                 <button class="bg-gray-300 text-black px-2 rounded" onclick="changerQuantite(${index}, 1)">+</button>
@@ -91,6 +115,7 @@ function afficherPanier(): void {
                         <p>Lieu de livraison : ${commande.livraison.lieu}</p>
                     </div>
                     ` : ''}
+                    ${commande.confirme ? `<i class="fas fa-check-circle text-green-500 text-xl"></i>` : ''}
                 `;
                 panierDiv.appendChild(commandeDiv);
             });
@@ -125,9 +150,10 @@ function handleFormSubmission(event: Event): void {
 
     let panier: Commande[] = JSON.parse(localStorage.getItem("panier") || "[]");
     panier[index].livraison = livraison;
+    panier[index].confirme = true; // Mark the command as confirmed
     localStorage.setItem("panier", JSON.stringify(panier));
     
-    alert('Informations de livraison enregistrées pour ' + panier[index].nom + ' Terminer votre commande sur WhatsApp nous vous recontacteront Merci!');
+    alert('Informations de livraison enregistrées pour ' + panier[index].nom + ' Terminer votre commande sur WhatsApp nous vous Recontacterons Merci');
     envoyerCommandeWhatsApp(index);
     afficherPanier(); // Refresh the panier display to show updated delivery info
 }
@@ -135,7 +161,7 @@ function handleFormSubmission(event: Event): void {
 function envoyerCommandeWhatsApp(index: number): void {
     const panier: Commande[] = JSON.parse(localStorage.getItem("panier") || "[]");
     const commande = panier[index];
-    const message = `Bonjour, je souhaite commander ${commande.quantite} ${commande.nom}(s) pour un total de ${commande.prix * commande.quantite}GNF. Lieu de livraison ${commande.livraison?.lieu}. Mon numéro de téléphone est ${commande.livraison?.telephone}.`;
+    const message = `Bonjour, je souhaite commander ${commande.quantite} ${commande.nom}(s) pour un total de ${commande.prix * commande.quantite}GNF. Lieu de Livraison:  ${commande.livraison?.lieu}. Mon numéro de téléphone est ${commande.livraison?.telephone}.`;
 
     const whatsappUrl = `https://wa.me/611969311?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -160,11 +186,11 @@ window.onload = () => {
     }
 };
 
+///////////animation///////
 
 
-/////pour le h1///
 document.addEventListener("DOMContentLoaded", function() {
-    const heading = document.getElementById('animation-heading') as HTMLElement;
+    const heading = document.getElementById('animation') as HTMLElement;
     const text = "Votre Panier ";
     const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
   

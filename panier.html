@@ -3,35 +3,44 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/5915d29e21.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta charset="UTF-8">
     <title>Panier</title>
     <script src="./TS/panier.js" defer></script>
-    <script src="./TS/animation.js"></script>
+    <script src="./TS/animation.js" defer></script>
 </head>
 <body class="bg-blue-100 rounded-lg">
     <header>
-        <h1 id="animation-heading" class="text-5xl font-bold"></h1>
+        <h1 id="animation" class="text-5xl font-bold"></h1>
     </header>
-    <p class="text-2xl">Votre panier est vider au bout de 24 Heure</p>
-    <section>
-        <ul class="flex space-x-5">
-            <li> <a href="homme.html" class="text-blue-500 p-2 hover:bg-blue-100 rounded text-4xl" >Retour A Vetement Pour Homme</a></li> 
-            <p id="color-changing-text" class="text-blue-500 p-2 hover:bg-blue-100 rounded text-5xl" >OU</p>
-            <li> <a href="femme.html" class="text-blue-500 p-2 hover:bg-blue-100 rounded text-4xl" > Retour A Vetement Pour Femme</a></li>
-        </ul>
-    </section>
+    <p class="text-2xl">Votre panier est vider au bout de 48 Heure</p>
+   
          <div id="panier"></div>
-    <footer class="flex items-center justify-start min-h-screen pt-10">
-        <nav>
-            <ul class="flex space-x-4">  
-           <li> <a href="#" class="text-black text-2xl p-2 hover:bg-blue-300 rounded">Nouvelle Arrivage</a></li>
-           <li> <a href="panier.html" class="text-black text-2xl p-2 hover:bg-blue-300 rounded">Pannier</a></li>
-           <li> <a href="index.html" id="Accueil" class="text-5xl hover:bg-blue-300 rounded">Accueil</a>  </li>
-           <li> <a href="https://wa.me/611969311" class="text-black text-2xl p-2 hover:bg-blue-300 rounded"> Nous contacter</a> </li>   
-           <li> <a href="#" class="text-black text-2xl p-2 hover:bg-blue-300 rounded"> localisation</a> </li> 
-            </ul>
-        </nav>
-    </footer>
+        <footer class="bg-gray-800 text-white py-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="flex space-x-4">
+                    <a href="#" class="flex items-center space-x-2">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-2">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-2">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    </a>
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Accueil</span>
+                    </a>
+                </div>
+                <div>
+                    <p>&copy; 2024 Votre Boutique. Tous droits réservés.</p>
+                </div>
+            </div>
+        </footer>
 </body>
 </html>
