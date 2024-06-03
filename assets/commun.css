@@ -1,3 +1,4 @@
+@charset "UTF-8";
 ul {
   display: flex;
   justify-content: space-around; }
@@ -8,5 +9,36 @@ ul {
     ul li a {
       text-decoration: none;
       color: black; }
+
+.image {
+  cursor: pointer;
+  width: 200px;
+  /* Taille initiale des logos */ }
+
+/* Styles pour l'overlay en plein écran */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  /* Styles pour l'image en plein écran */
+  /* Bouton pour fermer l'overlay */ }
+
+#overlay img {
+  max-width: 90%;
+  max-height: 90%; }
+
+#overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer; }
 
 /*# sourceMappingURL=commun.css.map */
